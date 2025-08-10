@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const QuoteBox = () => {
-    const [quotes, setQuotes] = useState([]);
-    const [currentQuote, setCurrentQuote] = useState(null);
+    const [quotes, setQuotes] = useState<QuoteType[]>([]);
+    const [currentQuote, setCurrentQuote] = useState<QuoteType| null>(null);
 
     // Загрузка JSON при старте
     useEffect(() => {
@@ -14,7 +14,12 @@ const QuoteBox = () => {
             });
     }, []);
 
-    const getRandomQuote = (data:SetStateAction<null>) => {
+    type QuoteType = {
+        quote: string;
+        author: string;
+    };
+
+    const getRandomQuote = (data:QuoteType[]) => {
         const index = Math.floor(Math.random() * data.length);
         return data[index];
     };
