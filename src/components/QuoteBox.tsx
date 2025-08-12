@@ -6,7 +6,7 @@ const QuoteBox = () => {
 
     // Загрузка JSON при старте
     useEffect(() => {
-        fetch('/quotes.json') // если quotes.json в public
+        fetch(`${import.meta.env.BASE_URL}quotes.json`) // если quotes.json в public
             .then(res => res.json())
             .then(data => {
                 setQuotes(data);

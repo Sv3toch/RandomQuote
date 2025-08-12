@@ -3,12 +3,11 @@ import QuoteBox from "./components/QuoteBox.tsx";
 
 function App() {
 
-  return (
-      <div className="App">
-          <h1> Случайная цитата</h1>
-          <QuoteBox />
-      </div>
-  );
+    return (
+        <div className="App">
+            <QuoteBox/>
+        </div>
+    );
 }
 
 export default App
